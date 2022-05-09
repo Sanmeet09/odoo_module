@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="customer_detail_form_view" model="ir.ui.view">
+        <field name="name">customer.detail.form.view</field>
+        <field name="model">customer.detail</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="mobile"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    Tree View-->
+    <record id="customer_detail_tree_view" model="ir.ui.view">
+        <field name="name">customer.detail.tree.view</field>
+        <field name="model">customer.detail</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="mobile"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!--    action-->
+    <record id="customer_action" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.detail</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hello Please Create a New Record
+            </p>
+        </field>
+
+    </record>
+
+
+    <menuitem id="menu_customerdetail_root_child" name="Customer" action="customer_action" parent="menu_salesorder_root"/>
+
+</odoo>

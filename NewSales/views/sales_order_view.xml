@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="sales_order_form_view" model="ir.ui.view">
+        <field name="name">sales.order.form.view</field>
+        <field name="model">sales.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="sales_id"/>
+                        <field name="gender"/>
+                        <field name="mobile"/>
+                        <field name="date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    Tree View-->
+    <record id="sales_order_tree_view" model="ir.ui.view">
+        <field name="name">sales.order.tree.view</field>
+        <field name="model">sales.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sales_id"/>
+                <field name="gender"/>
+                <field name="mobile"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!--    action-->
+    <record id="sales_action" model="ir.actions.act_window">
+        <field name="name">Sales</field>
+        <!--        <field name="type">ir.actions.act_window</field>-->
+        <field name="res_model">sales.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hello Please Create a New Record
+            </p>
+        </field>
+
+    </record>
+
+    <menuitem id="menu_salesorder_root" name="New sales"/>
+    <menuitem id="menu_salesorder_root_child" name="Sales List" action="sales_action" parent="menu_salesorder_root"/>
+
+</odoo>
