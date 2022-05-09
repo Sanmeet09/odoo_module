@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="demo_form_view" model="ir.ui.view">
+        <field name="name">demo.new.form.view</field>
+        <field name="model">demo.new</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="personal_details" string="Personal Details">
+
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="dob"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                            <field name="mobile"/>
+                            <field name="add"/>
+                        </group>
+                    </group>
+                    <separator string="Hobbies" style="color: green;" col="6"/>
+                    <hr style="background-color: green;"/>
+                    <group name="personal_details" string="Personal Details">
+
+                        <group>
+                            <field name="name"/>
+                            <field name="dob"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                            <field name="mobile"/>
+                            <field name="add" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+
+                        <page name="user" string="Users">
+                            <group name="personal_details" string="Personal Details">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="dob"/>
+                                    <field name="gender"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page name="details" string="Details">
+                            <group name="personal_details" string="Personal Details">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="dob"/>
+                                    <field name="gender"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <!--    Tree -->
+    <record id="demo_tree_view" model="ir.ui.view">
+        <field name="name">demo.new.tree.view</field>
+        <field name="model">demo.new</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="dob"/>
+                <field name="address"/>
+                <field name="gender"/>
+                <field name="mobile"/>
+            </tree>
+
+        </field>
+
+
+    </record>
+
+    <!--    action-->
+    <record id="demo_action" model="ir.actions.act_window">
+        <field name="name">Demo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">demo.new</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hello Please Create a New Record
+            </p>
+        </field>
+
+    </record>
+
+    <menuitem id="menu_demonew_root" name="Demo"/>
+    <menuitem id="menu_demonew_root_child" name="New Demo" action="demo_action" parent="menu_demonew_root"/>
+</odoo>
