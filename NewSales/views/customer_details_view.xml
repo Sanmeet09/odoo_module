@@ -8,11 +8,37 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                        <field name="mobile"/>
-                        <field name="gender"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="mobile"/>
+                        </group>
                     </group>
+
+                    <notebook>
+                        <page name="Product_line" string="Products">
+                            <field name="product_ids">
+                                <form>
+                                    <group>
+                                        <field name="product" string="Product Name"/>
+                                        <field name="quantity" string="Quantity"/>
+                                        <field name="price" string="Price"/>
+                                        <field name="product_id" string="Product Id"/>
+                                    </group>
+                                </form>
+                                <tree>
+                                    <field name="product"/>
+                                    <field name="quantity"/>
+                                    <field name="price"/>
+                                    <field name="product_id" string="Product Id"/>
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -49,6 +75,7 @@
     </record>
 
 
-    <menuitem id="menu_customerdetail_root_child" name="Customer" action="customer_action" parent="menu_salesorder_root"/>
+    <menuitem id="menu_customerdetail_root_child" name="Customer" action="customer_action"
+              parent="menu_salesorder_root"/>
 
 </odoo>

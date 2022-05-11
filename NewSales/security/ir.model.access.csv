@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 sales_order,sales.order,model_sales_order,base.group_user,1,1,1,1
 customer_detail,customer.detail,model_customer_detail,base.group_user,1,1,1,1
+customerdetail_line,customerdetail.line,model_customerdetail_line,base.group_user,1,1,1,1
