@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="inherit_customer_form_view" model="ir.ui.view">
+        <field name="name">customer.inherit.form.view</field>
+        <field name="model">customer.detail</field>
+        <field name="inherit_id" ref="NewSales.customer_detail_form_view"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="customer_description"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="inherit_customer_tree_view" model="ir.ui.view">
+        <field name="name">customer.inherit.tree.view</field>
+        <field name="model">customer.detail</field>
+        <field name="inherit_id" ref="NewSales.customer_detail_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="customer_description"/>
+            </field>
+        </field>
+    </record>
+</odoo>

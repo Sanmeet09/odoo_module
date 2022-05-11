@@ -49,7 +49,8 @@
 
     </record>
 
-    <menuitem id="menu_salesorder_root" name="New sales"/>
+    <menuitem id="menu_salesorder_root" name=" New Sales"/>
     <menuitem id="menu_salesorder_root_child" name="Sales List" action="sales_action" parent="menu_salesorder_root"/>
+    <menuitem id="product" name="Products" action="sales_action" parent="menu_salesorder_root_child"/>
 
 </odoo>

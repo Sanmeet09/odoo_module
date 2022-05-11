@@ -1,18 +1,20 @@
 {
-    'name': 'New Sales',
+    'name': 'New Sale',
     'version': '1.1',
     'author': 'Planet Odoo',
     'description': """ module of Sanmeet""",
     'category': '',
     'website': '',
     'depends': [
-        'base',
+        'base','sale'
     ],
     'data': [
         'security/ir.model.access.csv',
         'views/sales_order_view.xml',
         'views/customer_details_view.xml',
-
+        'views/sale.xml',
+        'views/inherit_customer.xml',
+        'views/sales_inherit_view.xml',
 
     ],
     'demo': [
