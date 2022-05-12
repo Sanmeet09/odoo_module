@@ -9,6 +9,11 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="fname"/>
+                        <field name="lname"/>
+                        <field name="tname"/>
+                    </group>
+                    <group>
                         <field name="sales_id"/>
                         <field name="gender"/>
                         <field name="mobile"/>
