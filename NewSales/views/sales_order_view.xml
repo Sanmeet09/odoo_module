@@ -19,6 +19,28 @@
                         <field name="mobile"/>
                         <field name="date"/>
                     </group>
+
+                     <notebook>
+                        <page name="Product_line" string="Sales">
+                            <field name="sales_ids">
+                                <form>
+                                    <group>
+                                        <field name="sales_name" string="Sales Name"/>
+                                        <field name="quantity" string="Quantity"/>
+                                        <field name="desc" string="Description"/>
+                                        <field name="products" string="Product  "/>
+
+                                    </group>
+                                </form>
+                                <tree>
+                                    <field name="sales_name"/>
+                                    <field name="quantity"/>
+                                    <field name="desc"/>
+                                    <field name="products"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -43,7 +65,7 @@
     <!--    action-->
     <record id="sales_action" model="ir.actions.act_window">
         <field name="name">Sales</field>
-        <!--        <field name="type">ir.actions.act_window</field>-->
+<!--                <field name="type">ir.actions.act_window</field>-->
         <field name="res_model">sales.order</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">

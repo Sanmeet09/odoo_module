@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    form view-->
+    <record id="ward_form_view" model="ir.ui.view">
+        <field name="name">ward.form.view</field>
+        <field name="model">ward.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <button string="Search Patient" type="object" name="search_patient"/>
+                    </header>
+
+                    <group>
+                        <field name="doctor"/>
+                        <field name="ward_no"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <!--    tree view-->
+    <record id="ward_tree_view" model="ir.ui.view">
+        <field name="name">ward.tree.view</field>
+        <field name="model">ward.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ward_no"/>
+                <field name="doctor"/>
+            </tree>
+        </field>
+
+    </record>
+
+    <!--    action view-->
+    <record id="ward_action" model="ir.actions.act_window">
+        <field name="name">Ward</field>
+        <field name="res_model">ward.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hello Please Create a New Record
+            </p>
+        </field>
+
+    </record>
+
+    <menuitem id="ward_menu" name="Wards" action="ward_action" parent="patient_root"/>
+</odoo>

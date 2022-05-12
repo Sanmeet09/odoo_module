@@ -15,6 +15,9 @@
         'views/sale.xml',
         'views/inherit_customer.xml',
         'views/sales_inherit_view.xml',
+        'views/patients_view.xml',
+        'views/doctor_view.xml',
+        'views/ward_view.xml',
 
     ],
     'demo': [

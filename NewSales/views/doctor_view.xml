@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    form view-->
+    <record id="doctor_form_view" model="ir.ui.view">
+        <field name="name">doctor.form.view</field>
+        <field name="model">doctor.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="doctor_name"/>
+                        <field name="desc"/>
+                        <field name="age"/>
+                        <field name="salary"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <!--    tree view-->
+    <record id="doctor_tree_view" model="ir.ui.view">
+        <field name="name">doctor.tree.view</field>
+        <field name="model">doctor.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="doctor_name"/>
+                <field name="desc"/>
+                <field name="age"/>
+                <field name="salary"/>
+            </tree>
+        </field>
+
+    </record>
+
+    <!--    action view-->
+    <record id="doctor_action" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">doctor.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hello Please Create a New Record
+            </p>
+        </field>
+
+    </record>
+
+    <menuitem id="doctor_menu" name="Doctors" action="doctor_action" parent="patient_root"/>
+</odoo>
