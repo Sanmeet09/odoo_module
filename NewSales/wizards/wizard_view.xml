@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+<!--    form view-->
+    <record id="wizard_details_form_view" model="ir.ui.view">
+        <field name="name">wizard.details.form.view</field>
+        <field name="model">create.details.wizard</field>
+        <field name="arch" type="xml">
+            <form string="New information">
+                <group>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="disease"/>
+                    <field name="doctor_id"/>
+                </group>
+                <footer>
+                    <button string="Save" name="save_record" type="object"/>
+                    <button string="Save Down" name="save_down" type="object"/>
+                    <button string="cancel" special="cancel"/>
+                </footer>
+
+            </form>
+        </field>
+
+
+    </record>
+
+
+<!--    action-->
+    <record id="wizard_action" model="ir.actions.act_window">
+        <field name="name">Information</field>
+        <field name="res_model">create.details.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_details_form_view"></field>
+        <field name="target">new</field>
+
+    </record>
+</odoo>

@@ -10,6 +10,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'wizards/wizard_view.xml',
         'views/sales_order_view.xml',
         'views/customer_details_view.xml',
         'views/sale.xml',
